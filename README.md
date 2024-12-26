@@ -1,5 +1,4 @@
 # Tomato-Leaf-Disease-Detection
-# Tomato Leaf Disease Detection
 
 ## 🌱 Introduction
 
@@ -44,30 +43,42 @@ Ensure the following software and libraries are installed:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/tomato-disease-detection.git
-   cd tomato-disease-detection
+   git clone https://github.com/peteksener/Tomato-Leaf-Disease-Detection.git
+   cd Tomato-Leaf-Disease-Detection
    ```
-2. **Install Dependencies:**
+2. **Prepare the Dataset:**
+   - Download the dataset from [(https://www.kaggle.com/datasets/emmarex/plantdisease/)](#).
+   - Split the dataset to 'train', 'val', 'test' folders.
+   - Place the folders in directory
+   - Replace datapaths in train.py with paths of your train, validation and test folders.
+     
+3. **Install Required Python Version:**
+   ```bash
+   brew install python@3.10
+   ```
+4. **Create Virtual Environment:**
+   ```bash
+   python3.10 -m venv tf_env
+   source tf_env/bin/activate
+   ```
+5. **Install Dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
-3. **Prepare the Dataset:**
-   - Download the dataset from [Dataset Link](#).
-   - Place the images in the `data/` directory.
 4. **Train the Model:**
    ```bash
    python train.py
    ```
-5. **Evaluate the Model:**
+5. **Test the Model:**
    ```bash
-   python evaluate.py
+   python test_model.py
    ```
 
 ---
 
 ## 📊 Results
 
-The model achieved high accuracy on the test set, demonstrating its potential for real-world applications. Performance metrics and visualizations of predictions can be found in the `results/` directory.
+The CNN model demonstrated high accuracy in classifying tomato leaf diseases across 10 categories, achieving a test accuracy of 98.9%. Data augmentation techniques improved the model’s ability to generalize within the scope of the dataset. However, challenges arise when applying the model to images found online, where multiple leaves are often present in a single picture. In contrast, our dataset consists of images with only one leaf per picture, leading to mispredictions in such cases. Interestingly, when the background of online images is modified to resemble the backgrounds in our dataset, the model’s predictions improve significantly. This suggests that background consistency plays a critical role in the model’s performance and highlights a limitation of the current dataset’s diversity.Additionally, the dataset imbalance is a significant factor contributing to the high loss in the validation set. The imbalance between different disease classes causes the model to favor the majority class, resulting in poorer performance on the minority classes during validation. This further highlights the need for a more balanced and diverse dataset to ensure the model can generalize better to new, unseen data.These findings emphasize the importance of creating datasets that better reflect real-world conditions. Future work could address these limitations by incorporating more varied and realistic samples to enhance the model’s robustness. Overall, this project illustrates the potential of AI in agriculture,offering scalable solutions for early disease detection and crop management.
 
 ---
 
@@ -91,9 +102,5 @@ This project is licensed under the [MIT License](LICENSE).
 - The creators of the public dataset used in this project.
 - Open-source frameworks like TensorFlow and Keras.
 
----
 
-## 📧 Contact
-
-For questions or suggestions, feel free to reach out at [your-email@example.com].
 
