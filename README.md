@@ -38,12 +38,15 @@ Ensure the following software and libraries are installed:
 - NumPy
 - Matplotlib
 - OpenCV
+- Pandas
+- Scikit Learn
 
 ### 📦 Installation
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/peteksener/Tomato-Leaf-Disease-Detection.git
+   git clone https://github.com/peteksnr/Tomato-Leaf-Disease-Detection.git
+
    cd Tomato-Leaf-Disease-Detection
    ```
 2. **Prepare the Dataset:**
@@ -65,11 +68,11 @@ Ensure the following software and libraries are installed:
    ```bash
    pip install -r requirements.txt
    ```
-4. **Train the Model:**
+6. **Train the Model:**
    ```bash
    python train.py
    ```
-5. **Test the Model:**
+7. **Test the Model:**
    ```bash
    python test_model.py
    ```
